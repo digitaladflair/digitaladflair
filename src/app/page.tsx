@@ -1,4 +1,14 @@
-// src/app/page.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital Adflair – Complete IT & Digital Solutions for Modern Businesses",
+  description: "Explore Digital Adflair's full-suite IT & digital services – web, apps, cloud, AI, marketing & more. One-stop solutions to power your business growth.",
+  robots: 'index, follow',
+  alternates: {
+    canonical: 'https://www.digitaladflair.com/',
+  },
+};
+
 import {HeroSection} from "../components/HeroSection";
 import {WhyChoose} from "../components/WhyChoose";
  import {ServicesSection} from "../components/ServicesSection";
@@ -11,8 +21,9 @@ import {FAQSection} from "../components/FAQSection";
 
 export default function HomePage() {
   return (
-    <main>
-      <HeroSection />
+    <>
+    <HeroSection />
+     <main className="container mx-auto">
        <WhyChoose />
       <ServicesSection />
       <IndustriesSection />
@@ -22,5 +33,6 @@ export default function HomePage() {
       <FAQSection />
       <CTASection /> 
     </main>
+    </>
   );
 }
