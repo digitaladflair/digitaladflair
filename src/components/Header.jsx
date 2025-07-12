@@ -32,6 +32,7 @@ export default function Header() {
           <Link href="/faq">FAQ</Link>
         </nav>
       </div>
+      
     </header>
   );
 }
