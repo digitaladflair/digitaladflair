@@ -1,10 +1,10 @@
 
-import type { Metadata } from "next";
+
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Header from '../components/Header';
-import {Footer} from '../components/Footer';
-import {HeadTag} from '../components/Head';
+import { Footer } from '../components/Footer';
+import { HeadTag } from '../components/Head';
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -15,14 +15,6 @@ const robotoMono = Roboto_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Digital Adflair – Complete IT & Digital Solutions for Modern Businesses",
-  description: "Explore Digital Adflair's full-suite IT & digital services – web, apps, cloud, AI, marketing & more. One-stop solutions to power your business growth.",
-   robots: 'index, follow',
-  alternates: {
-    canonical: 'https://www.digitaladflair.com/',
-  },
-};
 
 export default function RootLayout({
   children,
@@ -31,13 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <HeadTag/>
+      <HeadTag />
       <body
         className={`${inter.variable} ${robotoMono.variable} antialiased`}
       >
-        <Header/>
-        {children}
-        <Footer/>
+        <Header />
+          {children}
+        <Footer />
       </body>
     </html>
   );
