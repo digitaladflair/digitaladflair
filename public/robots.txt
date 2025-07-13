@@ -10,4 +10,4 @@ Allow: /
 
 
 
-Sitemap: https://www.digitaladflair.com/sitemap-mvr.xml
+Sitemap: https://www.digitaladflair.com/mvr-sitemap.xml
