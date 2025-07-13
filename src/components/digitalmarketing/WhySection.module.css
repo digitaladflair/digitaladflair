@@ -1,0 +1,45 @@
+/* components/digitalmarketing/WhySection.module.css */
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, background 0.4s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+  color: #ffffff;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.card p {
+  color: #4b5563;
+  transition: color 0.3s ease;
+  line-height: 1.6;
+}
+
+.card:hover h3,
+.card:hover p {
+  color: #ffffff;
+}
