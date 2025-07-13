@@ -17,7 +17,7 @@ import { HeroSection } from "../../../components/digitalmarketing/HeroSection";
 import { PackagesSection } from "../../../components/digitalmarketing/PackagesSection";
 import { ServicesSection } from "../../../components/digitalmarketing/ServiceSection";
 import { WhySection } from "../../../components/digitalmarketing/WhySection";
-import { caseStudiesSalem, contactSalem, faqsSalem, heroSalem, packagesSalem, servicesSalem, whySalem } from "../../../data/digitalmarketing/salem";
+import { areasSalem, caseStudiesSalem, contactSalem, faqsSalem, heroSalem, packagesSalem, servicesSalem, whySalem } from "../../../data/digitalmarketing/salem";
 
 export default function SalemPage() {
   return (
@@ -27,7 +27,7 @@ export default function SalemPage() {
     <WhySection {...whySalem}/>
   <ServicesSection {...servicesSalem}/>
   <CaseStudiesSection {...caseStudiesSalem}/>
-  <AreasSection {...AreasSection}/>
+  <AreasSection {...areasSalem}/>
   <PackagesSection {...packagesSalem}/>
   <FAQSection {...faqsSalem}/>
   <ContactSection {...contactSalem}/>
