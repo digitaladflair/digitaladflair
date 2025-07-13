@@ -1,6 +1,8 @@
 export function HeroSection() {
   return (
-    <section className="bg-white text-center py-12 px-4 text-gray-800">
+    <section className="bg-white text-center py-12 px-4 text-gray-800"
+    style={{ paddingTop:'80px'}}
+    >
       <h1 className="text-4xl font-bold mb-4">
         Digital Adflair – Complete IT & Digital Solutions
       </h1>
