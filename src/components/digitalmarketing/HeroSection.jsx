@@ -11,12 +11,9 @@ export function HeroSection({ title, subtitle, description, className = '' }) {
       <div className={styles.overlay} />
 
       <div className={`relative z-20 max-w-4xl mx-auto ${styles.fadeIn} ${styles.textHover}`}>
-        <h1
-          className="text-4xl md:text-5xl font-bold mb-4 pt-3"
-          style={{ color: 'black' , fontSize:'48px'}}
-        >
-          {title}
-        </h1>
+       <h1 className="text-[28px] md:text-[48px] font-bold mb-4 pt-3 text-black">
+  {title}
+</h1>
         <p className="text-lg leading-relaxed mb-8 text-white/80"
         style={{ color: '#757575', fontSize:'16px' ,margin:'16px'}}
         >
