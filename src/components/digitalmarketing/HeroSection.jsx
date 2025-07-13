@@ -4,7 +4,8 @@ import Image from 'next/image';
 export function HeroSection({ title, subtitle, description, className = '' }) {
   return (
     <section
-      className={`relative overflow-hidden text-center pt-5 text-gray-100 ${className}`}
+      className={`relative overflow-hidden text-center className="pt-20" text-gray-100 ${className}`}
+      style={{ paddingTop:'80px'}}
     >
       <div className={styles.gradientBackground} />
       <div className={styles.overlay} />
