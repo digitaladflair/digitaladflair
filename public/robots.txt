@@ -8,6 +8,4 @@ User-agent: Yahoo! Slurp
 
 Allow: /
 
-
-
-Sitemap: https://www.digitaladflair.com/mvr-sitemap.xml
+Sitemap: https://www.digitaladflair.com/sitemap.xml
