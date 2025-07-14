@@ -5,7 +5,7 @@ export const metadata = {
     "Top digital marketing company in Salem offering SEO, PPC, social media marketing & lead generation. Affordable plans for local businesses & startups.",
   robots: "index, follow",
   alternates: {
-    canonical: "https://www.digitaladflair.com/digital-marketing/salem/",
+    canonical: "https://www.digitaladflair.com/digital-marketing/salem",
   },
 };
 
