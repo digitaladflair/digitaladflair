@@ -7,19 +7,43 @@ export const whySalem = {
   title: 'Why Choose Our Digital Marketing Company in Salem?',
   points: [
     {
+      icon: '👨‍💼',
       title: 'Local Expertise You Can Trust',
-      desc: 'As a Salem-based marketing expert, we understand the local market better than anyone. Whether you want to reach nearby customers or expand across Tamil Nadu, our digital marketing strategies are designed to target your ideal audience effectively.'
+      desc: [
+        '📍 We are based in Salem and understand the local market.',
+        '🧭 Target customers from Salem and across Tamil Nadu.',
+        '🎯 Custom strategies for your specific audience.'
+      ]
     },
     {
-      title: 'E-E-A-T: Experience, Expertise, Authoritativeness, Trustworthiness',
-      desc: '15+ years of real results, certified professionals, trusted by 300+ local businesses, 100% transparency and measurable ROI.'
+      icon: '🔍',
+      title: 'Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T)',
+      desc: [
+        '🗓️ 15+ years of real results across industries.',
+        '🎓 Certified SEO, PPC, and SMM professionals.',
+        '🏢 Trusted by 300+ local businesses in Salem.',
+        '✅ Transparent service with measurable ROI.',
+        '📈 Builds website credibility and Google trust.'
+      ]
     },
     {
-      title: 'Full-Service Under One Roof',
-      desc: 'SEO, PPC, SMM, content, email, branding, influencer campaigns, e-commerce marketing, lead generation—all in one place.'
+      icon: '💼',
+      title: 'Full-Service Digital Marketing Under One Roof',
+      desc: [
+        '🔍 SEO – Search Engine Optimization',
+        '📢 Google Ads – PPC Campaigns',
+        '📱 SMM – Social Media Marketing',
+        '✍️ Content Creation & Blogging',
+        '📧 Email Marketing Campaigns',
+        '🧠 Branding & Influencer Marketing',
+        '🛒 E-commerce Marketing',
+        '🎯 Lead Generation Services',
+        '🧩 One-stop digital partner – no multiple vendors needed'
+      ]
     }
   ]
 };
+
 
 
 export const servicesSalem = {
