@@ -1,45 +1,109 @@
-/* components/digitalmarketing/WhySection.module.css */
 .cardGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2.5rem;
+  width: 100%;
 }
 
-@media (min-width: 768px) {
-  .cardGrid {
-    grid-template-columns: repeat(2, 1fr);
+/* Wrapper for title + card */
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Title outside */
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #1f2937;
+}
+
+/* Card box - stretch full */
+.card {
+  background: linear-gradient(135deg, #f3f4f6, #eec5fb);
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, background 0.4s ease;
+  overflow: hidden;
+  cursor: default;
+  position: relative;
+  min-height: 80px;
+}
+
+/* Optional: limit card width on large screens */
+@media (min-width: 1024px) {
+  .card {
+    max-width: 100%;
   }
 }
 
-.card {
-  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-  padding: 1.75rem;
-  border-radius: 1.25rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.4s ease, background 0.4s ease, color 0.3s ease;
-  cursor: default;
+/* Hover transform */
+.cardWrapper:hover .card {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #7b81f1, #ec5cde, #ed5787);
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
-  color: #ffffff;
+/* Initial prompt */
+.cardPrompt {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  transition: opacity 0.3s ease;
+  opacity: 1;
 }
 
-.card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  transition: color 0.3s ease;
+/* Hide prompt on hover */
+.cardWrapper:hover .cardPrompt {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.card p {
-  color: #4b5563;
-  transition: color 0.3s ease;
-  line-height: 1.6;
+/* Content container */
+.cardDesc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0.5rem;
 }
 
-.card:hover h3,
-.card:hover p {
+/* On hover, show boxes */
+.cardWrapper:hover .cardDesc {
+  opacity: 1;
+  max-height: 1000px;
+}
+
+/* Small content boxes */
+.tagBox {
+  background-color: #ffffff;
+  color: #428aef;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Color change on hover */
+.cardWrapper:hover .tagBox {
+  background-color: #ffffff33;
   color: #ffffff;
 }
