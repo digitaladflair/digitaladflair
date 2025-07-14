@@ -1,5 +1,6 @@
 'use client';
 
+import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -74,7 +75,6 @@ const services = [
   },
 ];
 
-// Animated Service Box Component
 function AnimatedServiceBox({ icon, title, points, delay }) {
   return (
     <motion.div
@@ -86,7 +86,6 @@ function AnimatedServiceBox({ icon, title, points, delay }) {
       className="relative bg-gradient-to-tr from-purple-50 to-indigo-50 rounded-3xl p-8 cursor-pointer select-none overflow-hidden"
       style={{ perspective: 1000 }}
     >
-      {/* Rotating Vector Background Circles */}
       <motion.div
         className="absolute top-[-30px] right-[-30px] w-24 h-24 bg-purple-300 rounded-full opacity-30 blur-xl"
         animate={{ rotate: 360 }}
@@ -97,7 +96,6 @@ function AnimatedServiceBox({ icon, title, points, delay }) {
         animate={{ rotate: -360 }}
         transition={{ repeat: Infinity, duration: 25, ease: 'linear' }}
       />
-
       <motion.div
         whileHover={{ scale: 1.3, rotate: 15 }}
         transition={{ type: 'spring', stiffness: 300 }}
@@ -115,7 +113,6 @@ function AnimatedServiceBox({ icon, title, points, delay }) {
   );
 }
 
-// Industries Data
 const industries = [
   { icon: '🛒', label: 'E-commerce' },
   { icon: '🏘️', label: 'Real Estate' },
@@ -130,7 +127,6 @@ const industries = [
   { icon: '🏪', label: 'Local Businesses' },
 ];
 
-// Industries Section
 function IndustriesSection() {
   return (
     <section className="bg-gray-50 py-16">
@@ -144,7 +140,6 @@ function IndustriesSection() {
         >
           🎯 Industries We Serve
         </motion.h3>
-
         <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
           {industries.map(({ icon, label }, idx) => (
             <motion.div
@@ -169,9 +164,15 @@ function IndustriesSection() {
 export default function ServicesPage() {
   return (
     <div className="bg-white w-full">
+      <Head>
+        <title>All-in-One Digital Growth Services | SEO, Ads, Website Design & More</title>
+        <meta name="description" content="Explore result-driven digital marketing, SEO, web design, and IT services. Achieve better rankings, more leads, and faster business growth with our experts." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.digitaladflair.com/services" />
+      </Head>
+
       {/* Hero Section */}
       <section className="relative w-full h-[600px] bg-gradient-to-br from-indigo-800 via-purple-700 to-pink-600 text-white flex flex-col items-center justify-center text-center overflow-hidden">
-        {/* Vector overlay */}
         <Image
           src="/vectors/hero-pattern.svg"
           alt="Hero Vector Pattern"
@@ -179,7 +180,6 @@ export default function ServicesPage() {
           className="object-cover opacity-10 absolute top-0 left-0 -z-10"
           priority
         />
-
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -188,7 +188,6 @@ export default function ServicesPage() {
         >
           Complete Digital & IT Solutions Under One Roof
         </motion.h1>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -197,7 +196,6 @@ export default function ServicesPage() {
         >
           From marketing to development — everything your business needs to grow, delivered by experts.
         </motion.p>
-
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -219,7 +217,6 @@ export default function ServicesPage() {
         >
           Your Business, Our Expertise
         </motion.h2>
-
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -230,7 +227,6 @@ export default function ServicesPage() {
           At Digital Adflair, we blend creativity, strategy, and technology to deliver full-stack digital and IT services that drive growth.
           Whether you’re launching a new brand, scaling your business, or optimizing operations — we’re here to help.
         </motion.p>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {services.map(({ icon, title, points }, idx) => (
             <AnimatedServiceBox
@@ -244,7 +240,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Industries Section */}
       <IndustriesSection />
 
       {/* CTA Section */}
@@ -258,7 +253,6 @@ export default function ServicesPage() {
         >
           💬 Let’s Build Your Digital Advantage
         </motion.h2>
-
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -268,7 +262,6 @@ export default function ServicesPage() {
         >
           We’re more than just a service provider — we’re your growth partner. Ready to transform your digital presence?
         </motion.p>
-
         <motion.button
           whileHover={{ scale: 1.1 }}
           className="bg-white text-purple-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-purple-100 transition-all duration-300"
