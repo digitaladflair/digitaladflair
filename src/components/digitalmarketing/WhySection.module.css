@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
+  width: 100%;
 }
 
 /* Wrapper for title + card */
@@ -9,6 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 /* Title outside */
@@ -19,23 +21,30 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: #1f2937;
 }
 
-/* Card box */
+/* Card box - stretch full */
 .card {
   background: linear-gradient(135deg, #f3f4f6, #eec5fb);
   padding: 1.5rem;
   border-radius: 1.25rem;
   width: 100%;
-  max-width: 600px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, background 0.4s ease;
   overflow: hidden;
   cursor: default;
   position: relative;
   min-height: 80px;
+}
+
+/* Optional: limit card width on large screens */
+@media (min-width: 1024px) {
+  .card {
+    max-width: 100%;
+  }
 }
 
 /* Hover transform */
