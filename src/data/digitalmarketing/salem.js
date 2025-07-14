@@ -17,7 +17,7 @@ export const whySalem = {
     },
     {
       icon: '🔍',
-      title: 'Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T)',
+      title: 'Experience, Expertise, Authoritativeness, and Trustworthiness',
       desc: [
         '🗓️ 15+ years of real results across industries.',
         '🎓 Certified SEO, PPC, and SMM professionals.',
