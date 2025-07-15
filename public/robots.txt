@@ -1,16 +1,12 @@
 User-agent: *
-Disallow: 
+Disallow: /
 
 User-agent: GPTBot
 Disallow: /
 
 User-agent: Yahoo! Slurp
-
 Allow: /
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 929486052e0632563ce4fbd71a188a58b8f668e6
 Sitemap: https://www.digitaladflair.com/sitemap.xml
