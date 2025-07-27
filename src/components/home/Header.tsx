@@ -11,7 +11,7 @@ export const Header = () => {
     { label: "Industries", href: "#industries" },
     { label: "Technologies", href: "#technologies" },
     { label: "Process", href: "#process" },
-    { label: "About", href: "#about" },
+    { label: "About", href: "about" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -22,7 +22,7 @@ export const Header = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <motion.div
             whileHover={{ scale: 1.05 }}

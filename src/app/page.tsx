@@ -10,7 +10,6 @@ import { Services } from "@/components/home/Services";
 import { Technologies } from "@/components/home/Technologies";
 import { Testimonials } from "@/components/home/Testimonials";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
-import { use } from "react";
 
 export default function Home() {
   return (
