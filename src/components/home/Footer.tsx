@@ -1,8 +1,6 @@
-import React from "react";
-import { motion } from "motion/react";
-import { useInView } from "motion/react";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { TextHoverEffect } from "../ui/text-hover-effect";
 
 export const Footer = () => {
