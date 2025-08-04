@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Award, Shield, Target, TrendingUp, Users, Gift } from "lucide-react";
 
 export const WhyChooseUs: React.FC = () => {
@@ -47,7 +47,7 @@ export const WhyChooseUs: React.FC = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 30,
