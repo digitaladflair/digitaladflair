@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
