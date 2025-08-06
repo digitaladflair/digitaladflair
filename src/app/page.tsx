@@ -1,8 +1,6 @@
 "use client";
 
 import { FAQ } from "@/components/home/FAQ";
-import { Footer } from "@/components/home/Footer";
-import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
 import { Industries } from "@/components/home/Industries";
 import { Process } from "@/components/home/Process";
@@ -14,7 +12,6 @@ import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-secondary via-background to-primary/5">
-      <Header />
       <Hero />
       <WhyChooseUs />
       <Services />
@@ -23,7 +20,6 @@ export default function Home() {
       <Process />
       <Testimonials />
       <FAQ />
-      <Footer />
     </div>
   );
 }
