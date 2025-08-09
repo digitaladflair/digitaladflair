@@ -10,6 +10,7 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
+    { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "About", href: "about" },
     { label: "Contact", href: "contact" },
