@@ -86,12 +86,6 @@ const ServiceCard = ({
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {service.features.map((feature, featureIndex) => {
-                const bgColor = service.bgColor
-                  .replace("100", "500")
-                  .toString();
-
-                console.log(bgColor);
-
                 return (
                   <motion.div
                     key={featureIndex}
