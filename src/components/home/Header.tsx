@@ -30,7 +30,7 @@ export const Header = () => {
           >
             <div className="w-10 h-10 flex items-center justify-center">
               <Image
-                src="/logo.jpeg"
+                src="/favicon.svg"
                 alt="Logo"
                 width={40}
                 height={40}
