@@ -11,7 +11,6 @@ import React from "react";
 const page = () => {
   return (
     <div className=" min-h-screen bg-gradient-to-br from-secondary via-background to-primary/5 relative">
-      <Header />
       <div className="mt-10">
         <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
           <DotPattern

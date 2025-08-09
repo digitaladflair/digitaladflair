@@ -1,5 +1,6 @@
 import { Smile, PenTool, Rocket, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import AnimatedBlobBg from "../shared/animated-blob-bg";
 
 const coreValues = [
   {
@@ -30,10 +31,10 @@ const coreValues = [
 
 const OurMission = () => {
   return (
-    <section className="bg-muted py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12">
+    <section className="py-14 px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto flex flex-col items-start gap-5">
         {/* Left Side: Heading */}
-        <div className="md:w-1/2">
+        <div className="flex flex-col items-center  w-full">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Our Core Values
           </h2>
@@ -42,14 +43,16 @@ const OurMission = () => {
           </p>
         </div>
 
+        <AnimatedBlobBg />
+
         {/* Right Side: Animated Circle Cards */}
-        <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-x-20 gap-y-10 pt-10 md:pt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-20 gap-y-10 pt-5 md:pt-10 mx-auto">
           {coreValues.map((value, idx) => {
             const Icon = value.icon;
             return (
               <div
                 key={idx}
-                className="bg-card text-card-foreground rounded-full size-[20rem] aspect-square mx-auto flex flex-col items-center justify-center text-center p-8 shadow-md border border-border animate-float"
+                className="bg-card text-card-foreground rounded-xl size-[18rem] aspect-square mx-auto flex flex-col items-center justify-center text-center p-8 border border-primary/20 animate-float"
                 style={{ animationDelay: `${idx * 0.3}s` }}
               >
                 <div className={cn("mb-4 p-4 rounded-full", value.bgColor)}>
