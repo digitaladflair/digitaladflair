@@ -1,18 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: "Services", href: "#services" },
-    { label: "Industries", href: "#industries" },
-    { label: "Technologies", href: "#technologies" },
-    { label: "Process", href: "#process" },
+    { label: "Services", href: "/services" },
     { label: "About", href: "about" },
     { label: "Contact", href: "contact" },
   ];
@@ -47,14 +45,13 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <motion.a
+              <Link
                 key={item.label}
                 href={item.href}
-                whileHover={{ scale: 1.05 }}
                 className="text-muted-foreground hover:text-primary transition-colors font-light tracking-tight"
               >
                 {item.label}
-              </motion.a>
+              </Link>
             ))}
           </nav>
 

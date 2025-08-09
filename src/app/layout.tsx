@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Digital Adflair",
   description:
     "Digital Adflair is a full-service digital marketing and IT solutions agency based in Bangalore, India. We help businesses grow online with smart strategies, powerful technology, and creative marketing.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

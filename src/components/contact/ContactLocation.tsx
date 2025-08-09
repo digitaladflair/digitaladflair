@@ -1,6 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Navigation } from "lucide-react";
+import { Navigation } from "lucide-react";
+import React from "react";
 
 // const image = `data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23000" fill-opacity="0.05"%3E%3Cpath d="M20 20c0 11.046-8.954 20-20 20v20h40V20H20z"/%3E%3C/g%3E%3C/svg%3E`;
 
