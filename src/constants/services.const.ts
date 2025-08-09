@@ -2,10 +2,23 @@ import {
   Building2,
   Cloud,
   Globe,
+  LucideIcon,
   Megaphone,
   Monitor,
   Smartphone,
 } from "lucide-react";
+
+export type TService = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  features: string[];
+  iconColor: string;
+  bgColor: string;
+  iconBgColor: string;
+  image: string;
+  gradient: string;
+};
 
 export const services = [
   {
@@ -20,7 +33,10 @@ export const services = [
       "E-commerce Solutions",
     ],
     iconColor: "text-blue-500",
-    bgColor: "bg-blue-100",
+    iconBgColor: "bg-blue-100",
+    bgColor: "bg-blue-400",
+    image: "/images/services/web_dev.png",
+    gradient: "from-blue-500 to-blue-600",
   },
   {
     icon: Smartphone,
@@ -34,7 +50,10 @@ export const services = [
       "App Maintenance",
     ],
     iconColor: "text-emerald-500",
-    bgColor: "bg-emerald-100",
+    iconBgColor: "bg-emerald-100",
+    bgColor: "bg-emerald-400",
+    image: "/images/services/mobile_dev.png",
+    gradient: "from-emerald-500 to-emerald-600",
   },
   {
     icon: Cloud,
@@ -48,7 +67,10 @@ export const services = [
       "SaaS Deployment",
     ],
     iconColor: "text-indigo-500",
-    bgColor: "bg-indigo-100",
+    iconBgColor: "bg-indigo-100",
+    bgColor: "bg-indigo-400",
+    image: "/images/services/cloud_service.png",
+    gradient: "from-indigo-500 to-indigo-600",
   },
   {
     icon: Monitor,
@@ -62,7 +84,10 @@ export const services = [
       "API Integrations",
     ],
     iconColor: "text-amber-500",
-    bgColor: "bg-amber-100",
+    iconBgColor: "bg-amber-100",
+    bgColor: "bg-amber-400",
+    image: "/images/services/web_enterprise.png",
+    gradient: "from-amber-500 to-amber-600",
   },
   {
     icon: Building2,
@@ -71,12 +96,15 @@ export const services = [
       "Comprehensive SAP implementation and consulting services for modern enterprises.",
     features: [
       "SAP Implementation",
-      "S/4HANA Consulting",
+      "S/4 HANA Consulting",
       "Business Integration",
       "SAP Support",
     ],
     iconColor: "text-violet-500",
-    bgColor: "bg-violet-100",
+    iconBgColor: "bg-violet-100",
+    bgColor: "bg-violet-400",
+    image: "/images/services/sap_enterprise.png",
+    gradient: "from-violet-500 to-violet-600",
   },
   {
     icon: Megaphone,
@@ -90,6 +118,9 @@ export const services = [
       "PPC Campaigns",
     ],
     iconColor: "text-red-500",
-    bgColor: "bg-red-100",
+    iconBgColor: "bg-red-100",
+    bgColor: "bg-red-400",
+    image: "/images/services/digital_marketing.png",
+    gradient: "from-red-400/20 to-red-400/5",
   },
 ];
