@@ -32,22 +32,22 @@ const ServiceCard = ({
         className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${isReversed ? "lg:flex-row-reverse" : ""}`}
       >
         {/* Image Section */}
-        <motion.div
+        <motion.figure
           className="flex-1 relative"
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <div className="relative">
-            <div className="size-[250px] md:size-[320px] relative mx-auto rounded-2xl overflow-hidden">
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="size-[250px] md:size-[320px] relative mx-auto rounded-2xl overflow-hidden">
+            <Image
+              src={service.image}
+              alt={service.title}
+              // fill
+              className="object-cover"
+              width={320}
+              height={320}
+            />
           </div>
-        </motion.div>
+        </motion.figure>
 
         {/* Content Section */}
         <div className="flex-1 space-y-6">
@@ -71,7 +71,7 @@ const ServiceCard = ({
             className="text-base md:text-lg text-gray-600 leading-relaxed max-w-lg"
             initial={{ opacity: 0, x: isReversed ? 50 : -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 + 0.5 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
             {service.description}
@@ -91,7 +91,7 @@ const ServiceCard = ({
                     key={featureIndex}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2 }}
+                    transition={{ delay: 0.2 }}
                     viewport={{ once: true }}
                     className="flex items-center"
                   >

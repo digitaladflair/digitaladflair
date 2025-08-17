@@ -54,38 +54,40 @@ const ServicesSection = () => {
 
       <div className="relative container mx-auto px-6 py-20">
         {/* Enhanced Header */}
-        <div className="text-center mb-24 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-8"
-          >
-            <span className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-200/50 rounded-full text-sm font-semibold text-blue-700 backdrop-blur-sm">
-              ✨ Our Premium Services
-            </span>
-          </motion.div>
+        <div className="w-full bg-[url('/blur-mesh.svg')] min-h-screen">
+          <div className="text-center mb-24 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-8"
+            >
+              <span className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-200/50 rounded-full text-sm font-semibold text-blue-700 backdrop-blur-sm">
+                ✨ Our Premium Services
+              </span>
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
-          >
-            <span className="text-gradient block mb-4">Transforming Ideas</span>
-            <span className="text-gray-900">Into Digital Reality</span>
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl md:text-7xl font-semibold mb-8 leading-tight text-primary"
+            >
+              <span className="block mb-4">Transforming Ideas</span>
+              <span>Into Digital Reality</span>
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
-          >
-            From innovative web solutions to comprehensive enterprise systems,
-            we craft digital experiences that drive growth, engagement, and
-            lasting success for your business.
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
+            >
+              From innovative web solutions to comprehensive enterprise systems,
+              we craft digital experiences that drive growth, engagement, and
+              lasting success for your business.
+            </motion.p>
+          </div>
         </div>
 
         {/* Services List with Alternating Layout */}
