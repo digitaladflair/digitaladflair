@@ -9,20 +9,25 @@ import { HeroSection } from "@/components/contact/HeroSection";
 import { SocialMedia } from "@/components/contact/SocialMedia";
 import { WhyChooseUs } from "@/components/contact/WhyChooseUs";
 import { WhoShouldContact } from "@/components/contact/WhyShouldContact";
+import SEO from "@/components/seo/seo";
+import { contactPageMetadata } from "@/constants/seo.config";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <HeroSection />
-      <ContactInfo />
-      <OfficeLocation />
-      <ContactForm />
-      <FAQ />
-      <WhoShouldContact />
-      <WhyChooseUs />
-      <AreasWeServe />
-      <SocialMedia />
-    </div>
+    <>
+      <SEO {...contactPageMetadata} />
+      <div className="min-h-screen bg-white">
+        <HeroSection />
+        <ContactInfo />
+        <OfficeLocation />
+        <ContactForm />
+        <FAQ />
+        <WhoShouldContact />
+        <WhyChooseUs />
+        <AreasWeServe />
+        <SocialMedia />
+      </div>
+    </>
   );
 };
 

@@ -1,10 +1,15 @@
+import SEO from "@/components/seo/seo";
 import ServicesSection from "@/components/services/ServicesSection";
+import { servicesPageMetadata } from "@/constants/seo.config";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <ServicesSection />
-    </div>
+    <>
+      <SEO {...servicesPageMetadata} />
+      <div className="min-h-screen">
+        <ServicesSection />
+      </div>
+    </>
   );
 };
 
