@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion, Variants } from "motion/react";
 import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";

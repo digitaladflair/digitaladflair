@@ -1,5 +1,5 @@
 import PageHeader from "@/components/blogs/page-header";
-import SEO from "@/components/seo/seo";
+
 import { blogPageMetadata } from "@/constants/seo.config";
 import { formatDate } from "@/lib/utils";
 import { blogs as allBlogs } from "@/velite";
@@ -7,9 +7,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Blog",
-};
+export const metadata: Metadata = blogPageMetadata;
 
 export default function BlogPage() {
   const blogs = allBlogs
@@ -18,7 +16,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <SEO {...blogPageMetadata} />
       <div className="flex min-h-screen justify-center pt-24">
         <div className="container max-w-6xl py-6 px-2 lg:py-10 mx-auto">
           <PageHeader

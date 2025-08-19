@@ -1,15 +1,14 @@
-"use client";
-
 import OurMission from "@/components/about/OurMission";
 import WhoWeAre from "@/components/about/WhoWeAre";
 import { WordRotate } from "@/components/magicui/word-rotate";
-import SEO from "@/components/seo/seo";
 import { aboutPageMetadata } from "@/constants/seo.config";
+import { Metadata } from "next";
+
+export const metadata: Metadata = aboutPageMetadata;
 
 const page = () => {
   return (
     <>
-      <SEO {...aboutPageMetadata} />
       <div className=" min-h-screen bg-gradient-to-br from-secondary via-background to-primary/5 relative ">
         <div className="mt-10">
           <div className="relative flex min-h-screen w-full flex-col items-center overflow-hidden rounded-lg bg-background bg-[url('/blur-mesh.svg')] py-20">

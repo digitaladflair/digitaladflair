@@ -1,11 +1,11 @@
-import SEO from "@/components/seo/seo";
 import ServicesSection from "@/components/services/ServicesSection";
 import { servicesPageMetadata } from "@/constants/seo.config";
+import { Metadata } from "next";
 
+export const metadata: Metadata = servicesPageMetadata;
 const Index = () => {
   return (
     <>
-      <SEO {...servicesPageMetadata} />
       <div className="min-h-screen">
         <ServicesSection />
       </div>

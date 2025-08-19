@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import { Award, Shield, Target, TrendingUp, Users, Gift } from "lucide-react";
