@@ -36,6 +36,10 @@ export default function RootLayout({
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-P85RBH77');`}
         </Script>
+        <meta
+          name="google-site-verification"
+          content="Wcc7ZucSLJraMO9OkagUOaVeRsUS6_DnPLpMFHwOYJk"
+        />
       </head>
       <body
         className={cn(
