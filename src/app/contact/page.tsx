@@ -1,5 +1,3 @@
-"use client";
-
 import { AreasWeServe } from "@/components/contact/AreasWeServe";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactInfo } from "@/components/contact/ContactInfo";
@@ -9,13 +7,14 @@ import { HeroSection } from "@/components/contact/HeroSection";
 import { SocialMedia } from "@/components/contact/SocialMedia";
 import { WhyChooseUs } from "@/components/contact/WhyChooseUs";
 import { WhoShouldContact } from "@/components/contact/WhyShouldContact";
-import SEO from "@/components/seo/seo";
 import { contactPageMetadata } from "@/constants/seo.config";
+import { Metadata } from "next";
+
+export const metadata: Metadata = contactPageMetadata;
 
 const ContactPage = () => {
   return (
     <>
-      <SEO {...contactPageMetadata} />
       <div className="min-h-screen bg-white">
         <HeroSection />
         <ContactInfo />

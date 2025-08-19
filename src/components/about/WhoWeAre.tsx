@@ -1,3 +1,5 @@
+"use client";
+
 import { Rocket, Layout, Compass } from "lucide-react";
 import Image from "next/image";
 
