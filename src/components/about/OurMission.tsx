@@ -1,3 +1,5 @@
+"use client";
+
 import { Smile, PenTool, Rocket, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AnimatedBlobBg from "../shared/animated-blob-bg";
