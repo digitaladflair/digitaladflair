@@ -80,7 +80,7 @@ export const SocialMedia: React.FC = () => {
           className="mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            📢 Follow Us on Social Media
+            Follow Us on Social Media
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
             Stay connected with us for updates, tips, and success stories:

@@ -23,7 +23,7 @@ export const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
-            🔧 Our <span className="text-primary">Services</span>
+            Our <span className="text-primary">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
             We offer a complete suite of IT & digital solutions that cover every

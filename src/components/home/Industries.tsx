@@ -80,7 +80,7 @@ export const Industries = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
-            🌍 Industries We <span className="text-primary">Serve</span>
+            Industries We <span className="text-primary">Serve</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
             We work with clients across multiple industries, tailoring every

@@ -62,7 +62,7 @@ export const AreasWeServe: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-            🌍 Areas We Serve
+            Areas We Serve
           </h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
             Even though we are based in Bangalore, we work with clients across:

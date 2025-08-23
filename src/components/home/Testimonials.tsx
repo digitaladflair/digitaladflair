@@ -47,7 +47,7 @@ export const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
-            💬 What Our Clients <span className="text-primary">Say</span>
+            What Our Clients <span className="text-primary">Say</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
             Don&apos;t just take our word for it — hear from our satisfied
