@@ -84,7 +84,7 @@ export const Hero = () => {
           <div className="bg-card/60 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-border">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                <div className="text-3xl font-bold text-primary mb-2">20+</div>
                 <div className="text-muted-foreground font-light">
                   Projects Delivered
                 </div>
