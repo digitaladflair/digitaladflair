@@ -48,7 +48,7 @@ export const Process = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
-            🧩 How We Work: Our{" "}
+            How We Work: Our{" "}
             <span className="text-primary">5-Step Process</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">

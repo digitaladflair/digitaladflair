@@ -53,7 +53,7 @@ export const FAQ = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
-            ❓ Frequently Asked <span className="text-primary">Questions</span>
+            Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light">
             Got questions? We've got answers.

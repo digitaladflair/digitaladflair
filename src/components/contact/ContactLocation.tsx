@@ -22,7 +22,7 @@ export const OfficeLocation: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-            📍 Our Office Location
+            Our Office Location
           </h2>
         </motion.div>
 
