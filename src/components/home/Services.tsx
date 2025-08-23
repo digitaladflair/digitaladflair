@@ -1,3 +1,5 @@
+"use client";
+
 import { services } from "@/constants/services.const";
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "motion/react";

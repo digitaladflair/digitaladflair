@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion, Variants } from "motion/react";
 import { Building, Rocket, Users, Code, Briefcase } from "lucide-react";

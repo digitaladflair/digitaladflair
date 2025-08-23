@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import { Phone, Mail, MessageCircle, Clock, MapPin } from "lucide-react";
