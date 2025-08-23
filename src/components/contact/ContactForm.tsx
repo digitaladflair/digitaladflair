@@ -47,7 +47,7 @@ export const ContactForm: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-            📨 Send Us a Message
+            Send Us a Message
           </h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Fill in the form below. Our team will get back to you as soon as

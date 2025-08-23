@@ -83,7 +83,7 @@ export const ContactInfo: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-            📞 Talk to Our Experts
+            Talk to Our Experts
           </h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             We love hearing from you! Whether you have a question, want a quote,

@@ -81,7 +81,7 @@ export const WhoShouldContact: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-            💼 Who Should Contact Us?
+            Who Should Contact Us?
           </h2>
         </motion.div>
 

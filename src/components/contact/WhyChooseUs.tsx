@@ -82,7 +82,7 @@ export const WhyChooseUs: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            🤝 Why Choose Digital Adflair?
+            Why Choose Digital Adflair?
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
             We are not just another agency. We are your digital growth partners.
