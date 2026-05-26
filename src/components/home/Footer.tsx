@@ -178,15 +178,15 @@ export const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-primary-foreground/70">
                   <Phone size={16} />
-                  <span className="font-light">+91 98765 43210</span>
+                  <span className="font-light">+91 8525018187</span>
                 </div>
                 <div className="flex items-center space-x-3 text-primary-foreground/70">
                   <Mail size={16} />
-                  <span className="font-light">hello@digitaladflair.com</span>
+                  <span className="font-light">digitaladflair@gmail.com</span>
                 </div>
                 <div className="flex items-start space-x-3 text-primary-foreground/70">
                   <MapPin size={16} className="mt-1 flex-shrink-0" />
-                  <span className="font-light">Mumbai, India</span>
+                  <span className="font-light">Salem, India</span>
                 </div>
               </div>
             </motion.div>
