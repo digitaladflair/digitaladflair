@@ -5,91 +5,156 @@ import { cn } from "@/lib/utils";
 import { motion, useInView } from "motion/react";
 import { useId, useRef } from "react";
 
+// Helper to get custom colored container & bullet classes based on the constant iconColor string
+const getColorClasses = (iconColor: string) => {
+  if (iconColor.includes("blue")) {
+    return {
+      iconContainer: "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-100/50 dark:border-blue-900/30",
+      bullet: "text-blue-500 dark:text-blue-400",
+      hoverBorder: "hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5",
+    };
+  }
+  if (iconColor.includes("emerald")) {
+    return {
+      iconContainer: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-100/50 dark:border-emerald-900/30",
+      bullet: "text-emerald-500 dark:text-emerald-400",
+      hoverBorder: "hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/5",
+    };
+  }
+  if (iconColor.includes("indigo")) {
+    return {
+      iconContainer: "bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border border-indigo-100/50 dark:border-indigo-900/30",
+      bullet: "text-indigo-500 dark:text-indigo-400",
+      hoverBorder: "hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/5",
+    };
+  }
+  if (iconColor.includes("amber")) {
+    return {
+      iconContainer: "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 border border-amber-100/50 dark:border-amber-900/30",
+      bullet: "text-amber-500 dark:text-amber-400",
+      hoverBorder: "hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/5",
+    };
+  }
+  if (iconColor.includes("violet")) {
+    return {
+      iconContainer: "bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 border border-violet-100/50 dark:border-violet-900/30",
+      bullet: "text-violet-500 dark:text-violet-400",
+      hoverBorder: "hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/5",
+    };
+  }
+  // Default to red/rose
+  return {
+    iconContainer: "bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-100/50 dark:border-red-900/30",
+    bullet: "text-red-500 dark:text-red-400",
+    hoverBorder: "hover:border-red-500/50 hover:shadow-xl hover:shadow-red-500/5",
+  };
+};
+
 export const Services = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
     <section
       id="services"
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary"
+      className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-background"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Background radial glow */}
+      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
-            Our <span className="text-primary">Services</span>
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <span>Our Services</span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
+            What We <span className="text-blue-600 dark:text-blue-400">Offer</span>
           </h2>
-          <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed font-light">
             We offer a complete suite of IT & digital solutions that cover every
-            stage of your digital transformation journey
+            stage of your digital transformation journey.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-              animate={
-                isInView
-                  ? {
-                      opacity: 1,
-                      y: 0,
-                      filter: "blur(0px)",
-                    }
-                  : {
-                      opacity: 0,
-                      y: 30,
-                      filter: "blur(10px)",
-                    }
-              }
-              transition={{
-                duration: 0.2,
-                filter: { duration: 0.2 },
-              }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="group"
-            >
-              <div className="bg-card/70 hover:rounded-2xl hover:border-primary backdrop-blur-lg p-8 transition-all duration-300 h-full relative hover:z-50">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div
-                    className={cn(
-                      "size-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300",
-                      service.bgColor
-                    )}
-                  >
-                    <service.icon
-                      className={cn("size-7 text-white", service.iconColor)}
-                    />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const colors = getColorClasses(service.iconColor);
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                animate={
+                  isInView
+                    ? {
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                      }
+                    : {
+                        opacity: 0,
+                        y: 30,
+                        filter: "blur(10px)",
+                      }
+                }
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.08,
+                }}
+                whileHover={{ y: -6 }}
+                className="group relative"
+              >
+                <div className={cn(
+                  "relative overflow-hidden bg-white/60 dark:bg-zinc-900/60 hover:bg-white/90 dark:hover:bg-zinc-900/90 backdrop-blur-md rounded-2xl p-8 border border-zinc-200/80 dark:border-zinc-800 transition-all duration-300 h-full flex flex-col justify-between hover:shadow-xl",
+                  colors.hoverBorder
+                )}>
+                  {/* Keep the grid component behind content */}
+                  <Grid size={20} />
+
+                  <div className="relative z-10 pointer-events-none flex flex-col h-full justify-between">
+                    <div>
+                      {/* Colorful Icon container */}
+                      <div className="flex items-center space-x-4 mb-6">
+                        <div className={cn(
+                          "w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300 border",
+                          colors.iconContainer
+                        )}>
+                          <service.icon className="w-6 h-6 animate-pulse [animation-duration:3s]" />
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight mb-4">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-light mb-6">
+                        {service.description}
+                      </p>
+
+                      <ul className="space-y-2 mb-6">
+                        {service.features.map((feature, featureIndex) => (
+                          <li
+                            key={featureIndex}
+                            className="flex items-start text-xs sm:text-sm text-zinc-600 dark:text-zinc-400"
+                          >
+                            <span className={cn("mr-2.5 text-base leading-none", colors.bullet)}>&bull;</span>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-medium text-foreground mb-4 tracking-tight">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground font-light mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li
-                      key={featureIndex}
-                      className="flex items-center text-sm text-muted-foreground"
-                    >
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Grid size={20} />
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
