@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/mdx.css";
 import { cn } from "@/lib/utils";
@@ -7,8 +7,8 @@ import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import Script from "next/script";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
@@ -43,8 +43,8 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          `${spaceGrotesk.variable} antialiased font-font-space-grotesk`,
-          spaceGrotesk.className
+          `${inter.variable} antialiased font-sans`,
+          inter.className
         )}
       >
         <noscript>

@@ -180,7 +180,7 @@ export const WhyChooseUs = () => {
             <span>Why Digital Adflair</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl  text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl  text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight font-semibold">
             Why We Are{" "}
             <span className="text-blue-600 dark:text-blue-400">Different</span>
           </h2>
