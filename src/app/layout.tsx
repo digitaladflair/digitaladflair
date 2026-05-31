@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import Script from "next/script";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -59,6 +60,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <SmoothCursor />
       </body>
     </html>
   );
