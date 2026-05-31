@@ -10,145 +10,209 @@ import {
   Radio,
   ShoppingCart,
   Truck,
+  ArrowRight,
 } from "lucide-react";
-import { motion, useInView } from "motion/react";
 import React, { useRef } from "react";
+import { motion, useInView } from "motion/react";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 export const Industries = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const industries = [
     {
       icon: Building2,
       name: "Fintech & Banking",
-      bg: "bg-gradient-to-br from-indigo-100 to-indigo-200",
-      iconColor: "text-indigo-600",
+      description: "Secure digital payments, transaction monitoring systems, and automated wealth platforms.",
+      iconClass: "bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border-indigo-100 dark:border-indigo-900/30",
+      cardBorderHover: "hover:border-indigo-500/40 hover:shadow-indigo-500/5",
+      gridClass: "stroke-indigo-500/10 dark:stroke-indigo-500/10 hover:fill-indigo-500/5",
     },
     {
       icon: ShoppingCart,
       name: "E-commerce & Retail",
-      bg: "bg-gradient-to-br from-pink-100 to-pink-200",
-      iconColor: "text-pink-500",
+      description: "High-conversion online storefronts, multi-vendor marketplaces, and POS sync tools.",
+      iconClass: "bg-pink-50 dark:bg-pink-950/40 text-pink-600 dark:text-pink-400 border-pink-100 dark:border-pink-900/30",
+      cardBorderHover: "hover:border-pink-500/40 hover:shadow-pink-500/5",
+      gridClass: "stroke-pink-500/10 dark:stroke-pink-500/10 hover:fill-pink-500/5",
     },
     {
       icon: Heart,
       name: "Healthcare & Wellness",
-      bg: "bg-gradient-to-br from-red-100 to-red-200",
-      iconColor: "text-red-500",
+      description: "Patient portal applications, HIPAA-compliant storage, and custom telemedicine platforms.",
+      iconClass: "bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 border-red-100 dark:border-red-900/30",
+      cardBorderHover: "hover:border-red-500/40 hover:shadow-red-500/5",
+      gridClass: "stroke-red-500/10 dark:stroke-red-500/10 hover:fill-red-500/5",
     },
     {
       icon: GraduationCap,
       name: "EdTech & Training",
-      bg: "bg-gradient-to-br from-blue-100 to-blue-200",
-      iconColor: "text-blue-500",
+      description: "Interactive learning portals, virtual classrooms, and enterprise training tools.",
+      iconClass: "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border-blue-100 dark:border-blue-900/30",
+      cardBorderHover: "hover:border-blue-500/40 hover:shadow-blue-500/5",
+      gridClass: "stroke-blue-500/10 dark:stroke-blue-500/10 hover:fill-blue-500/5",
     },
     {
       icon: Home,
       name: "Real Estate & Construction",
-      bg: "bg-gradient-to-br from-amber-100 to-amber-200",
-      iconColor: "text-amber-500",
+      description: "Property manager software, interactive mapping, and MLS-integrated MLS listings search.",
+      iconClass: "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 border-amber-100 dark:border-amber-900/30",
+      cardBorderHover: "hover:border-amber-500/40 hover:shadow-amber-500/5",
+      gridClass: "stroke-amber-500/10 dark:stroke-amber-500/10 hover:fill-amber-500/5",
     },
     {
       icon: Truck,
       name: "Logistics & Transportation",
-      bg: "bg-gradient-to-br from-orange-100 to-orange-200",
-      iconColor: "text-orange-500",
+      description: "Supply chain tracking platforms, fleet dispatch management, and custom driver logs.",
+      iconClass: "bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 border-orange-100 dark:border-orange-900/30",
+      cardBorderHover: "hover:border-orange-500/40 hover:shadow-orange-500/5",
+      gridClass: "stroke-orange-500/10 dark:stroke-orange-500/10 hover:fill-orange-500/5",
     },
     {
       icon: Radio,
       name: "Media & Advertising",
-      bg: "bg-gradient-to-br from-purple-100 to-purple-200",
-      iconColor: "text-purple-500",
+      description: "Automated ad management, streaming services, and custom digital asset delivery.",
+      iconClass: "bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 border-purple-100 dark:border-purple-900/30",
+      cardBorderHover: "hover:border-purple-500/40 hover:shadow-purple-500/5",
+      gridClass: "stroke-purple-500/10 dark:stroke-purple-500/10 hover:fill-purple-500/5",
     },
-
     {
       icon: Landmark,
       name: "Government & Public Sector",
-      bg: "bg-gradient-to-br from-green-100 to-green-200",
-      iconColor: "text-green-600",
+      description: "Secure citizen administration portals, database networks, and public utilities management.",
+      iconClass: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border-emerald-100 dark:border-emerald-900/30",
+      cardBorderHover: "hover:border-emerald-500/40 hover:shadow-emerald-500/5",
+      gridClass: "stroke-emerald-500/10 dark:stroke-emerald-500/10 hover:fill-emerald-500/5",
     },
   ];
 
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft } = scrollContainerRef.current;
+      const cardWidth = 320 + 24; // Card width + gap
+      const scrollAmount = direction === "left" 
+        ? scrollLeft - cardWidth * 2 
+        : scrollLeft + cardWidth * 2;
+      
+      scrollContainerRef.current.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section id="industries" ref={ref} className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
+    <section id="industries" ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-background">
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-20 pointer-events-none">
+        <InteractiveGridPattern
+          width={40}
+          height={40}
+          className="text-zinc-300 dark:text-zinc-800 stroke-zinc-200/40 dark:stroke-zinc-800/40"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header flex row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+            className="text-left"
+          >
+            {/* Badge */}
+            <div className="inline-flex items-center space-x-2 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+              <span>What We Focus On</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">
+              Industries We <span className="text-blue-600 dark:text-blue-400">Serve</span>
+            </h2>
+            <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl mt-4 leading-relaxed font-light">
+              We work with clients across multiple industries, tailoring every solution to fit business-specific goals.
+            </p>
+          </motion.div>
+
+          {/* Navigation Controls */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-center space-x-3 shrink-0 self-end md:self-auto"
+          >
+            <button 
+              onClick={() => scroll("left")}
+              className="w-12 h-12 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center transition-colors shadow-sm cursor-pointer hover:border-blue-500/50 hover:text-blue-600"
+              aria-label="Previous Slide"
+            >
+              <ArrowRight size={18} className="rotate-180" />
+            </button>
+            <button 
+              onClick={() => scroll("right")}
+              className="w-12 h-12 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center transition-colors shadow-sm cursor-pointer hover:border-blue-500/50 hover:text-blue-600"
+              aria-label="Next Slide"
+            >
+              <ArrowRight size={18} />
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Carousel sliding container */}
+        <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto gap-6 pb-8 scrollbar-none scroll-smooth snap-x snap-mandatory select-none"
         >
-          <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6 tracking-tight">
-            Industries We <span className="text-primary">Serve</span>
-          </h2>
-          <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
-            We work with clients across multiple industries, tailoring every
-            solution to fit business-specific goals
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-2 max-w-7xl mx-auto">
           {industries.map((industry, index) => (
-            <Feature
+            <div 
               key={index}
-              title={industry.name}
-              icon={
-                <industry.icon className={cn("size-7", industry.iconColor)} />
-              }
-              index={index}
-              iconBgColor={industry.bg}
-            />
+              className={cn(
+                "min-w-[280px] sm:min-w-[320px] max-w-[320px] snap-start relative group overflow-hidden bg-white/60 dark:bg-zinc-900/60 hover:bg-white/90 dark:hover:bg-zinc-900/90 backdrop-blur-md rounded-2xl p-8 border border-zinc-200/80 dark:border-zinc-800 transition-all duration-300 flex flex-col justify-between h-[280px]",
+                industry.cardBorderHover
+              )}
+            >
+              {/* Interactive Grid Pattern */}
+              <InteractiveGridPattern
+                width={36}
+                height={36}
+                className="absolute inset-0 h-full w-full opacity-60 group-hover:opacity-100 transition-opacity z-0"
+                squaresClassName={industry.gridClass}
+              />
+
+              <div className="relative z-10 pointer-events-none flex flex-col h-full justify-between">
+                <div>
+                  {/* Colorful Accent Icon container */}
+                  <div className={cn(
+                    "w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 border",
+                    industry.iconClass
+                  )}>
+                    <industry.icon className="w-6 h-6 animate-pulse [animation-duration:3s]" />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight mb-3">
+                    {industry.name}
+                  </h3>
+
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-light">
+                    {industry.description}
+                  </p>
+                </div>
+
+                {/* Bottom arrow indicator */}
+                <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm space-x-1.5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-4px] group-hover:translate-x-0">
+                  <span>Learn More</span>
+                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
-  );
-};
-
-const Feature = ({
-  title,
-  icon,
-  iconBgColor,
-  index,
-}: {
-  title: string;
-  description?: string;
-  icon: React.ReactNode;
-  index: number;
-  iconBgColor?: string;
-}) => {
-  return (
-    <div
-      className={cn(
-        "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800",
-        (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
-        index < 4 && "lg:border-b dark:border-neutral-800"
-      )}
-    >
-      {index < 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
-      )}
-      {index >= 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
-      )}
-      <div
-        className={cn(
-          "mb-4 relative z-10 px-5 sm:px-10 text-neutral-600 dark:text-neutral-400"
-        )}
-      >
-        <div
-          className={`size-14 bg-gradient-to-br ${iconBgColor} rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center `}
-        >
-          {icon}
-        </div>
-      </div>
-      <div className="text-base sm:text-lg font-bold mb-2 relative z-10 px-5 sm:px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
-          {title}
-        </span>
-      </div>
-    </div>
   );
 };
