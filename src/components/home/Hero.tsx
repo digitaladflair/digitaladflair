@@ -79,9 +79,9 @@ export const Hero = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-base sm:text-lg md:text-xl text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
           >
-            From stunning websites to intelligent enterprise systems, from mobile apps
-            to machine learning, Digital Adflair helps you harness the power of
-            technology — the simple way.
+            From stunning websites to intelligent enterprise systems, from
+            mobile apps to machine learning, Digital Adflair helps you harness
+            the power of technology — the simple way.
           </motion.p>
 
           {/* Modern CTA Buttons */}
@@ -97,7 +97,10 @@ export const Hero = () => {
               className="cursor-pointer w-full sm:w-auto px-8 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 rounded-xl font-medium text-base transition-colors shadow-md shadow-zinc-950/10 flex items-center justify-center space-x-2"
             >
               <span>Get a Free Consultation</span>
-              <ArrowRight size={18} className="text-zinc-400 dark:text-zinc-500" />
+              <ArrowRight
+                size={18}
+                className="text-zinc-400 dark:text-zinc-500"
+              />
             </motion.button>
 
             <motion.button
@@ -117,23 +120,45 @@ export const Hero = () => {
             className="mt-16 sm:mt-24 flex flex-col sm:flex-row items-center justify-center gap-y-4 gap-x-8 text-sm text-zinc-500 dark:text-zinc-400 font-medium"
           >
             <div className="flex items-center space-x-2">
-              <span className="text-blue-600 dark:text-blue-400 font-bold text-base">20+</span>
-              <span className="text-zinc-500 dark:text-zinc-400 text-xs tracking-tight uppercase">Projects Delivered</span>
+              <span className="text-blue-600 dark:text-blue-400 font-bold text-base">
+                20+
+              </span>
+              <span className="text-zinc-500 dark:text-zinc-400 text-xs tracking-tight uppercase">
+                Projects Delivered
+              </span>
             </div>
-            <span className="hidden sm:inline text-zinc-200 dark:text-zinc-800">|</span>
+            <span className="hidden sm:inline text-zinc-200 dark:text-zinc-800">
+              |
+            </span>
             <div className="flex items-center space-x-2">
-              <span className="text-blue-600 dark:text-blue-400 font-bold text-base">10+</span>
-              <span className="text-zinc-500 dark:text-zinc-400 text-xs tracking-tight uppercase">Domains Covered</span>
+              <span className="text-blue-600 dark:text-blue-400 font-bold text-base">
+                10+
+              </span>
+              <span className="text-zinc-500 dark:text-zinc-400 text-xs tracking-tight uppercase">
+                Domains Covered
+              </span>
             </div>
-            <span className="hidden sm:inline text-zinc-200 dark:text-zinc-800">|</span>
+            <span className="hidden sm:inline text-zinc-200 dark:text-zinc-800">
+              |
+            </span>
             <div className="flex items-center space-x-2">
-              <span className="text-blue-600 dark:text-blue-400 font-bold text-base">98%</span>
-              <span className="text-zinc-500 dark:text-zinc-400 text-xs tracking-tight uppercase">Client Satisfaction</span>
+              <span className="text-blue-600 dark:text-blue-400 font-bold text-base">
+                98%
+              </span>
+              <span className="text-zinc-500 dark:text-zinc-400 text-xs tracking-tight uppercase">
+                Client Satisfaction
+              </span>
             </div>
-            <span className="hidden sm:inline text-zinc-200 dark:text-zinc-800">|</span>
+            <span className="hidden sm:inline text-zinc-200 dark:text-zinc-800">
+              |
+            </span>
             <div className="flex items-center space-x-2">
-              <span className="text-blue-600 dark:text-blue-400 font-bold text-base">24/7</span>
-              <span className="text-zinc-500 dark:text-zinc-400 text-xs tracking-tight uppercase">Support Available</span>
+              <span className="text-blue-600 dark:text-blue-400 font-bold text-base">
+                24/7
+              </span>
+              <span className="text-zinc-500 dark:text-zinc-400 text-xs tracking-tight uppercase">
+                Support Available
+              </span>
             </div>
           </motion.div>
         </div>
