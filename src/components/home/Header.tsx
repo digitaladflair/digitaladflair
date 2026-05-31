@@ -1,124 +1,110 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
+  NavbarButton,
+} from "@/components/ui/resizable-navbar";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-    { label: "Blog", href: "/blog" },
+  const navItems = [
+    { name: "Home", link: "/" },
+    { name: "Services", link: "/services" },
+    { name: "About", link: "/about" },
+    { name: "Contact", link: "/contact" },
+    { name: "Blog", link: "/blog" },
   ];
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border"
-    >
-      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
-          >
-            <div className="w-10 h-10 flex items-center justify-center">
+    <Navbar>
+      {/* Desktop Navigation */}
+      <NavBody className="bg-white/80 dark:bg-zinc-950/80 border border-zinc-200/50 dark:border-zinc-800/50 shadow-md">
+        <Link href="/" className="relative z-50 flex items-center space-x-2.5">
+          <div className="w-9 h-9 flex items-center justify-center shrink-0">
+            <Image
+              src="/favicon.svg"
+              alt="Logo"
+              width={36}
+              height={36}
+              className="rounded-full"
+            />
+          </div>
+          <span className="text-lg font-bold text-zinc-900 dark:text-zinc-50 tracking-tight whitespace-nowrap">
+            Digital Adflair
+          </span>
+        </Link>
+
+        <NavItems items={navItems} />
+
+        <NavbarButton
+          as={Link}
+          href="/contact"
+          variant="gradient"
+          className="px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider"
+        >
+          Get Started
+        </NavbarButton>
+      </NavBody>
+
+      {/* Mobile Navigation */}
+      <MobileNav>
+        <MobileNavHeader>
+          <Link href="/" className="relative z-50 flex items-center space-x-2">
+            <div className="w-8 h-8 flex items-center justify-center shrink-0">
               <Image
                 src="/favicon.svg"
                 alt="Logo"
-                width={40}
-                height={40}
+                width={32}
+                height={32}
                 className="rounded-full"
               />
             </div>
-            <span className="text-xl font-bold text-foreground tracking-tight">
+            <span className="text-base font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">
               Digital Adflair
             </span>
-          </motion.div>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
+          <MobileNavToggle
+            isOpen={isMenuOpen}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          />
+        </MobileNavHeader>
+
+        <MobileNavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
+          <div className="flex flex-col gap-4 w-full">
+            {navItems.map((item, idx) => (
               <Link
-                key={item.label}
-                href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors font-light tracking-tight"
+                key={idx}
+                href={item.link}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-base text-zinc-600 dark:text-zinc-300 font-medium hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"
               >
-                {item.label}
+                {item.name}
               </Link>
             ))}
-          </nav>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 10px 25px rgba(249, 115, 22, 0.3)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-xl font-medium shadow-lg hover:shadow-primary/25 transition-all duration-300"
+            <NavbarButton
+              as={Link}
+              href="/contact"
+              variant="gradient"
+              onClick={() => setIsMenuOpen(false)}
+              className="w-full mt-2 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-center"
             >
               Get Started
-            </motion.button>
+            </NavbarButton>
           </div>
-
-          {/* Mobile Menu Button */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-16 right-0 h-screen w-80 bg-background/95 backdrop-blur-xl border-l border-border md:hidden"
-          >
-            <div className="p-6 space-y-6">
-              {menuItems.map((item, index) => (
-                <motion.a
-                  key={item.label}
-                  href={item.href}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block text-lg text-foreground hover:text-primary transition-colors font-light"
-                >
-                  {item.label}
-                </motion.a>
-              ))}
-              <motion.button
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: menuItems.length * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full px-6 py-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-xl font-medium shadow-lg"
-              >
-                Get Started
-              </motion.button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+        </MobileNavMenu>
+      </MobileNav>
+    </Navbar>
   );
 };
+
