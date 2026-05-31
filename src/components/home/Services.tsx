@@ -4,49 +4,62 @@ import { services } from "@/constants/services.const";
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "motion/react";
 import { useId, useRef } from "react";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 // Helper to get custom colored container & bullet classes based on the constant iconColor string
 const getColorClasses = (iconColor: string) => {
   if (iconColor.includes("blue")) {
     return {
-      iconContainer: "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-100/50 dark:border-blue-900/30",
+      iconContainer:
+        "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-100/50 dark:border-blue-900/30",
       bullet: "text-blue-500 dark:text-blue-400",
-      hoverBorder: "hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5",
+      hoverBorder:
+        "hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5",
     };
   }
   if (iconColor.includes("emerald")) {
     return {
-      iconContainer: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-100/50 dark:border-emerald-900/30",
+      iconContainer:
+        "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-100/50 dark:border-emerald-900/30",
       bullet: "text-emerald-500 dark:text-emerald-400",
-      hoverBorder: "hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/5",
+      hoverBorder:
+        "hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/5",
     };
   }
   if (iconColor.includes("indigo")) {
     return {
-      iconContainer: "bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border border-indigo-100/50 dark:border-indigo-900/30",
+      iconContainer:
+        "bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border border-indigo-100/50 dark:border-indigo-900/30",
       bullet: "text-indigo-500 dark:text-indigo-400",
-      hoverBorder: "hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/5",
+      hoverBorder:
+        "hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/5",
     };
   }
   if (iconColor.includes("amber")) {
     return {
-      iconContainer: "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 border border-amber-100/50 dark:border-amber-900/30",
+      iconContainer:
+        "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 border border-amber-100/50 dark:border-amber-900/30",
       bullet: "text-amber-500 dark:text-amber-400",
-      hoverBorder: "hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/5",
+      hoverBorder:
+        "hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/5",
     };
   }
   if (iconColor.includes("violet")) {
     return {
-      iconContainer: "bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 border border-violet-100/50 dark:border-violet-900/30",
+      iconContainer:
+        "bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 border border-violet-100/50 dark:border-violet-900/30",
       bullet: "text-violet-500 dark:text-violet-400",
-      hoverBorder: "hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/5",
+      hoverBorder:
+        "hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/5",
     };
   }
   // Default to red/rose
   return {
-    iconContainer: "bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-100/50 dark:border-red-900/30",
+    iconContainer:
+      "bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-100/50 dark:border-red-900/30",
     bullet: "text-red-500 dark:text-red-400",
-    hoverBorder: "hover:border-red-500/50 hover:shadow-xl hover:shadow-red-500/5",
+    hoverBorder:
+      "hover:border-red-500/50 hover:shadow-xl hover:shadow-red-500/5",
   };
 };
 
@@ -60,6 +73,7 @@ export const Services = () => {
       ref={ref}
       className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-background"
     >
+      {/* <SmoothCursor /> */}
       {/* Background radial glow */}
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
@@ -76,7 +90,8 @@ export const Services = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
-            What We <span className="text-blue-600 dark:text-blue-400">Offer</span>
+            What We{" "}
+            <span className="text-blue-600 dark:text-blue-400">Offer</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed font-light">
             We offer a complete suite of IT & digital solutions that cover every
@@ -111,10 +126,12 @@ export const Services = () => {
                 whileHover={{ y: -6 }}
                 className="group relative"
               >
-                <div className={cn(
-                  "relative overflow-hidden bg-white/60 dark:bg-zinc-900/60 hover:bg-white/90 dark:hover:bg-zinc-900/90 backdrop-blur-md rounded-2xl p-8 border border-zinc-200/80 dark:border-zinc-800 transition-all duration-300 h-full flex flex-col justify-between hover:shadow-xl",
-                  colors.hoverBorder
-                )}>
+                <div
+                  className={cn(
+                    "relative overflow-hidden bg-white/60 dark:bg-zinc-900/60 hover:bg-white/90 dark:hover:bg-zinc-900/90 backdrop-blur-md rounded-2xl p-8 border border-zinc-200/80 dark:border-zinc-800 transition-all duration-300 h-full flex flex-col justify-between hover:shadow-xl",
+                    colors.hoverBorder,
+                  )}
+                >
                   {/* Keep the grid component behind content */}
                   <Grid size={20} />
 
@@ -122,10 +139,12 @@ export const Services = () => {
                     <div>
                       {/* Colorful Icon container */}
                       <div className="flex items-center space-x-4 mb-6">
-                        <div className={cn(
-                          "w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300 border",
-                          colors.iconContainer
-                        )}>
+                        <div
+                          className={cn(
+                            "w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300 border",
+                            colors.iconContainer,
+                          )}
+                        >
                           <service.icon className="w-6 h-6 animate-pulse [animation-duration:3s]" />
                         </div>
                       </div>
@@ -144,7 +163,14 @@ export const Services = () => {
                             key={featureIndex}
                             className="flex items-start text-xs sm:text-sm text-zinc-600 dark:text-zinc-400"
                           >
-                            <span className={cn("mr-2.5 text-base leading-none", colors.bullet)}>&bull;</span>
+                            <span
+                              className={cn(
+                                "mr-2.5 text-base leading-none",
+                                colors.bullet,
+                              )}
+                            >
+                              &bull;
+                            </span>
                             <span>{feature}</span>
                           </li>
                         ))}
