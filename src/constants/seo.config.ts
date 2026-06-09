@@ -3,10 +3,10 @@ export const homePageMetadata = {
   description:
     "Digital Adflair offers end-to-end digital and IT solutions—from web and mobile to AI, cloud, and marketing—tailored to startups, SMEs, and enterprises.",
   alternates: {
-    canonical: "https://www.digitaladflair.com/",
+    canonical: "https://digitaladflair.com/",
   },
   openGraph: {
-    url: "https://www.digitaladflair.com/",
+    url: "https://digitaladflair.com/",
     title: "Digital Adflair – Complete Digital & IT Solutions",
     description:
       "Digital Adflair offers end-to-end digital and IT solutions—from web and mobile to AI, cloud, and marketing—tailored to startups, SMEs, and enterprises.",
